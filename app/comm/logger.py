@@ -5,8 +5,15 @@ import logging
 import threading
 from datetime import datetime
 from logging.handlers import TimedRotatingFileHandler
+import os
+from sys import path
 
-from app.config.config import *
+commpath = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "comm"))
+path.append(commpath)
+path.append("../config")
+
+from config import config
+from config.config import *
 
 try:
     import codecs
