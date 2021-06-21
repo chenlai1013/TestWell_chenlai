@@ -2,10 +2,14 @@
 # -*- coding:utf-8 -*-
 
 import datetime
-from app.comm.logger import get_logger
-
-from app.comm.sql_exec import MySqlExec
-from app.config.config import *
+from logger import get_logger
+from sql_exec import MySqlExec
+import os
+from sys import path
+commpath = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "comm"))
+path.append(commpath)
+path.append("../config")
+from config.config import *
 import json
 
 
