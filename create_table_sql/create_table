@@ -1,0 +1,38 @@
+// 创建download_detail
+CREATE TABLE IF NOT EXISTS `download_detail`(
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `usr_id` INT NOT NULL,
+   `ret` INT(1) NOT NULL,
+   `errno` VARCHAR(8),
+   `is_full_detail` VARCHAR(1),
+   `detail` VARCHAR(256),
+   PRIMARY KEY ( `id` ),
+   FOREIGN KEY (`usr_id`) REFERENCES name2id(`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+// 创建shell_detail
+CREATE TABLE IF NOT EXISTS `shell_detail`(
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `usr_id` INT NOT NULL,
+   `ret` INT(1) NOT NULL,
+   `errno` VARCHAR(8),
+   `is_full_msg` VARCHAR(1),
+   `ret_msg` VARCHAR(256),
+   `is_full_detail` VARCHAR(1),
+   `detail` VARCHAR(256),
+   PRIMARY KEY ( `id` ),
+   FOREIGN KEY (`usr_id`) REFERENCES name2id(`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+// 创建sql_detail
+CREATE TABLE IF NOT EXISTS `sql_detail`(
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `usr_id` INT NOT NULL,
+   `ret` INT(1) NOT NULL,
+   `errno` VARCHAR(8),
+   `is_full_detail` VARCHAR(1),
+   `detail` VARCHAR(256),
+   PRIMARY KEY ( `id` ),
+   FOREIGN KEY (`usr_id`) REFERENCES name2id(`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
